@@ -3,7 +3,10 @@ import bodyParser from 'body-parser'
 import express from 'express'
 import http from 'node:http'
 import { Server } from 'socket.io'
-import {GraphQLServer, JsonLogger} from '@dreamit/graphql-server'
+import {
+    GraphQLServer, 
+    JsonLogger
+} from '@dreamit/graphql-server'
 import { 
     userSchema, 
     userSchemaResolvers 
@@ -25,7 +28,7 @@ const graphqlServer = new GraphQLServer(
 const io = new Server(server)
 io.on('connection', (socket) => {
     console.log('a user connected')
-    socket.on('chat message', async (message) => {
+    socket.on('chat message', async(message) => {
         console.log('message: ' + message)
         // Execute GraphQL request from message
 
@@ -40,7 +43,7 @@ io.on('connection', (socket) => {
     })
 })
 
-app.all('/graphql', async (request, response) => {
+app.all('/graphql', async(request, response) => {
     // eslint-disable-next-line unicorn/prefer-module
     return await graphqlServer.handleRequestAndSendResponse(request, response)
 })
