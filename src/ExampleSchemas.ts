@@ -3,10 +3,10 @@ import {
     GraphQLError,
     GraphQLSchema
 } from 'graphql'
+import {AggregateError} from  '@dreamit/graphql-server'
 import {
-    AggregateError,
     GraphQLRequestInfo
-} from  '@dreamit/graphql-server'
+} from  '@sgohlke/graphql-server-base'
 
 // Contains example schemas and data that can be used across tests
 

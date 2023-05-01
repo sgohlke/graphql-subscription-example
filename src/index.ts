@@ -32,7 +32,7 @@ io.on('connection', (socket) => {
         console.log('message: ' + message)
         // Execute GraphQL request from message
 
-        const result = await graphqlServer.executeRequest({
+        const result = await graphqlServer.handleRequest({
             query: message
         })
 
@@ -45,7 +45,7 @@ io.on('connection', (socket) => {
 
 app.all('/graphql', async(request, response) => {
     // eslint-disable-next-line unicorn/prefer-module
-    return await graphqlServer.handleRequestAndSendResponse(request, response)
+    return await graphqlServer.handleRequest(request, response)
 })
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
