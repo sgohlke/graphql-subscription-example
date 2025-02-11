@@ -10,7 +10,7 @@ import {
 import { 
     userSchema, 
     userSchemaResolvers 
-} from './ExampleSchemas'
+} from '@dreamit/graphql-testing'
 
 const app = express()
 app.use(bodyParser.text({type: '*/*'}))
