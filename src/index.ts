@@ -45,7 +45,7 @@ io.on('connection', (socket) => {
 
 app.all('/graphql', async(request, response) => {
     // eslint-disable-next-line unicorn/prefer-module
-    return await graphqlServer.handleRequest(request, response)
+    await graphqlServer.handleRequest(request, response)
 })
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
