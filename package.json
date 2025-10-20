@@ -29,8 +29,8 @@
   "devDependencies": {
     "@types/body-parser": "1.19.6",
     "@types/express": "5.0.1",
-    "@types/node": "24.7.2",
-    "oxlint": "1.22.0",
+    "@types/node": "24.8.1",
+    "oxlint": "1.23.0",
     "typescript": "5.9.3"
   }
 }
